@@ -320,7 +320,7 @@ CGRect IASKCGRectSwap(CGRect rect);
 			
 			if (hideSections.count || hideIndexPaths.count || showSections.count || showIndexPaths.count) {
 				[self.tableView beginUpdates];
-				UITableViewRowAnimation animation = animated ? UITableViewRowAnimationAutomatic : UITableViewRowAnimationNone;
+				UITableViewRowAnimation animation = animated ? UITableViewRowAnimationFade : UITableViewRowAnimationNone;
 				if (hideSections.count) {
 					[self.tableView deleteSections:hideSections withRowAnimation:animation];
 				}
