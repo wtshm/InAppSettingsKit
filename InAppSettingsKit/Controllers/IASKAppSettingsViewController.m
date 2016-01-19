@@ -578,6 +578,9 @@ CGRect IASKCGRectSwap(CGRect rect);
 	}
 	else if ([specifier.type isEqualToString:kIASKPSTextFieldSpecifier]) {
 		cell.textLabel.text = specifier.title;
+        
+        cell.detailTextLabel.text = [[specifier titleForCurrentValue:[self.settingsStore objectForKey:specifier.key] != nil ?
+                                      [self.settingsStore objectForKey:specifier.key] : specifier.defaultValue] description];
 		
 		NSString *textValue = [self.settingsStore objectForKey:specifier.key] != nil ? [self.settingsStore objectForKey:specifier.key] : specifier.defaultStringValue;
 		if (textValue && ![textValue isMemberOfClass:[NSString class]]) {
